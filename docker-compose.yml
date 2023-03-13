@@ -1,0 +1,30 @@
+#docker-composeで使用するバージョン
+version: '3.8'
+
+# dbデータの保存場所。(ホストからは見えない)
+volumes:
+  mysql-data:
+
+services:
+ #サービスの名前
+  centos:
+    build: .
+    # restart: always
+    ports:
+    # - 80:80
+    # - 443:443
+    - 8580:80
+    - 58000:8000
+    - 53000:3000
+    volumes:
+    - ./html:/var/www/html:cached
+    - mysql-data:/var/lib/mysql
+    - ./volumes/httpd.conf:/etc/httpd/conf/httpd.conf
+    - ./volumes/v_host.conf:/etc/httpd/conf.d/v_host.conf
+    - ./volumes/php.ini:/etc/php.ini
+    - ./volumes/phpMyAdmin.conf:/etc/httpd/conf.d/phpMyAdmin.conf
+    working_dir: /var/www/html
+    tty: true
+    platform: linux/x86_64 #CPUがm1の場合
+    privileged: true  
+    command: /sbin/init  
