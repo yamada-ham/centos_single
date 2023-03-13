@@ -12,34 +12,6 @@ gulp
 ```
 
 
-# DockerでCentOSを使ったLAMP環境構築
-
-## Docker の導入
-[Dockerアプリインストール](https://docs.docker.com/get-docker/)
-
-git クローン
-```
-$ git clone git@github.com:yamada-ham/centos7_php7.git
-```
-
-コマンド ビルドして起動 
-```
-$ docker-compose up -d
-```
-<br>
-
-アクセス方法 *ポート番号はdocker-compose.ymlに設定されているポート番号
-```
-  http://localhost:ポート番号/
-```
-<br>
-
-コンテナに入る サービス名はDockerfileで記載してある「centos」
-```
-  docker-compose exec サービス名 bash
-```
-<br>
-
 ## ポートの追加方法
 ### 例:92番ポートを通す方法
 <br>
