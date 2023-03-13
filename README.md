@@ -1,7 +1,7 @@
 # 構築内容
 ```
 Centos7
-PHP v7
+PHP v8.1
 phpMyAdmin
 MySQL v8
 Composer
