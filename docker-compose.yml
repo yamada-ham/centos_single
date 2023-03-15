@@ -25,6 +25,7 @@ services:
     - ./volumes/phpMyAdmin.conf:/etc/httpd/conf.d/phpMyAdmin.conf
     - ./volumes/config.inc.php:/etc/phpMyAdmin/config.inc.php
     - ./volumes/.htpasswd:/etc/httpd/conf.d/.htpasswd
+    - ./volumes/log:/var/log
     working_dir: /var/www/html
     tty: true
     platform: linux/x86_64 #CPUがm1の場合

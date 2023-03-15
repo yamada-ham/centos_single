@@ -3,4 +3,6 @@
 
 html/*
 !html/phpinfo
-# !html/php_error.log
+volumes/php_error.log
+
+volumes/log
